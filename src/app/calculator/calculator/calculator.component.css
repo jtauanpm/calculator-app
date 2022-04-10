@@ -1,0 +1,56 @@
+h1{
+    position: absolute;
+    top: 8%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+    padding-top: 2%;
+}
+
+.calc {   
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.btn-calc{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 3px;
+    background-color: rgb(31,31,31);
+    border: none;
+    color: #fff;
+    border-radius: 7px;
+}
+
+.btn-calc:hover{
+    background-color: black;
+}
+
+.two-col{
+    width: 100px;
+}
+
+
+#field{
+    background-color: white;
+    width: 220px;
+    height: 30px;
+    margin: 5px;
+    font-size: 25px;
+    color: black;
+    text-align: right;
+    padding: 7px;
+}
+
+#historic{
+    position: absolute;
+    top: 7%;
+    right: 10%;
+    padding-top: 2%;
+}
