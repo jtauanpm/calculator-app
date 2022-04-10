@@ -12,7 +12,7 @@ export class CalculatorComponent implements OnInit {
   public field:string = '';
   public null:string = 'empty';
   public historicList:CalcRecord[] = [];
-  public result:any;
+  public result:string = ''; // or any
   public confirm:boolean = false;
 
   constructor(private calculateService:CalculateService) { }
@@ -33,15 +33,14 @@ export class CalculatorComponent implements OnInit {
   }
 
   calculate(){
-    if(this.field !== ''){
+    if(this.field !== '' && this.field !== this.result){
       this.result = this.calculateService.calculate(this.field);
       this.addHistoric(this.field, this.result);
       this.field = this.result;
-    }else{
-      if(this.field !== this.null){
-        this.field = this.null
-      }
-    }
+    }else if(this.field !== this.null){
+      this.field = this.null
+    }    
+
   }
 
   addHistoric(expression:string, result:string){
