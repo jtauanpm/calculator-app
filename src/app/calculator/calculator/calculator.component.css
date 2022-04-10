@@ -33,13 +33,13 @@ h1{
 }
 
 .two-col{
-    width: 100px;
+    width: 95%;
 }
 
 
 #field{
     background-color: white;
-    width: 220px;
+    width: 212px;
     height: 30px;
     margin: 5px;
     font-size: 25px;
