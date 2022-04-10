@@ -13,9 +13,9 @@ export class CalculatorComponent implements OnInit {
   public null:string = 'empty';
   public historicList:CalcRecord[] = [];
   public result:string = ''; // or any
-  public confirm:boolean = false;
+  public clearConfirm:boolean = false;
 
-  constructor(private calculateService:CalculateService) { }
+  constructor(private calculateService:CalculateService) { this.load() }
 
   clean(){
     this.field = '';
@@ -44,14 +44,27 @@ export class CalculatorComponent implements OnInit {
   }
 
   addHistoric(expression:string, result:string){
-    //todo: make model of historic
     this.historicList.unshift(new CalcRecord(expression,result));
+    this.save();
   }
 
   cleanHistory(){
-    this.confirm = confirm("Deseja limpar o histórico ?");
-    if(this.confirm == true){
+    this.clearConfirm = confirm("Deseja limpar o histórico ?");
+    if(this.clearConfirm == true){
       this.historicList = [];
+    }
+  }
+
+  save(){
+    const dataHistoric = JSON.stringify(this.historicList);
+    sessionStorage.setItem('historicList', dataHistoric);
+  }
+
+  load(){
+    const dataHistoric = sessionStorage.getItem('historicList');
+    
+    if(dataHistoric !== null){
+      this.historicList = JSON.parse(dataHistoric);
     }
   }
 

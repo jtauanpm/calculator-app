@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: rgb(179, 251, 171);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button {
+    background-color: #000;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 1em;
+    font-weight: 20;
+    padding-left: 30px;
+    padding-right: 30px;
+}
