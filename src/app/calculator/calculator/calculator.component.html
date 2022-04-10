@@ -38,7 +38,7 @@
     <h2>History</h2>
     <div id="one-historic" >
         <ul>
-            <li *ngFor="let historic of historicList">{{ historic }}</li>
+            <li *ngFor="let historic of historicList">{{ historic.expression }} = {{historic.result}}</li>
         </ul>
         <button (click)="cleanHistory()">Clear</button>
     </div>

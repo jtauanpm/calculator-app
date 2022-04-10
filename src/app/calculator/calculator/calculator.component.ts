@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CalculateService } from './calculate.service';
 
+import { CalcRecord } from 'src/models/calc-record.model';
+
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
@@ -9,7 +11,7 @@ import { CalculateService } from './calculate.service';
 export class CalculatorComponent implements OnInit {
   public field:string = '';
   public null:string = 'empty';
-  public historicList:String[] = [];
+  public historicList:CalcRecord[] = [];
   public result:any;
   public confirm:boolean = false;
 
@@ -33,7 +35,7 @@ export class CalculatorComponent implements OnInit {
   calculate(){
     if(this.field !== ''){
       this.result = this.calculateService.calculate(this.field);
-      this.addHistoric(this.field + ' = ' + this.result);
+      this.addHistoric(this.field, this.result);
       this.field = this.result;
     }else{
       if(this.field !== this.null){
@@ -42,9 +44,9 @@ export class CalculatorComponent implements OnInit {
     }
   }
 
-  addHistoric(historic:String){
+  addHistoric(expression:string, result:string){
     //todo: make model of historic
-    this.historicList.unshift(historic);
+    this.historicList.unshift(new CalcRecord(expression,result));
   }
 
   cleanHistory(){
