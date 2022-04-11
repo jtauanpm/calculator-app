@@ -9,11 +9,12 @@ import { CalcRecord } from 'src/models/calc-record.model';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
+  public title: String = 'Calculator';
   public historic:boolean = false;
   public field:string = '';
   public null:string = 'empty';
   public historicList:CalcRecord[] = [];
-  public result:string = ''; // or any
+  public result:string = '';
   public clearConfirm:boolean = false;
 
   constructor(private calculateService:CalculateService) { this.load() }

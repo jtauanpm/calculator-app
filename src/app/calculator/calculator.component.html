@@ -1,4 +1,4 @@
-<h1>Calculator</h1>
+<h1>{{ title }}</h1>
 
 <div class="calc">
     <input [value]="field" type="text" readonly id="field">
@@ -34,15 +34,12 @@
     </table>
 </div>
 
-<div id="teste">
-    <button id="btn-history" (click)="showHistory()">Show History</button>
-    <div *ngIf="historic" id="historic" >
-        <div id="historic-list" >
-            <button [disabled]="historicList.length === 0" class="button" id="clear-btn" (click)="cleanHistory()">Clear</button>
-            <p class="center" *ngIf="historicList.length == 0"> <small>Nothing To Show</small></p>
-            <ul>
-                <li *ngFor="let historic of historicList">{{ historic.expression }} = {{historic.result}}</li>
-            </ul>
-        </div>
-    </div>
+
+<button id="btn-history" (click)="showHistory()">Show History</button>
+<div *ngIf="historic" id="historic" >
+    <button [disabled]="historicList.length === 0" class="button" id="clear-btn" (click)="cleanHistory()">Clear</button>
+    <p class="center" *ngIf="historicList.length == 0"> <small>Nothing To Show</small></p>
+    <ul>
+        <li *ngFor="let historic of historicList">{{ historic.expression }} = {{historic.result}}</li>
+    </ul>
 </div>

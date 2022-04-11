@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EventManager } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  public mode:String = 'calculator';
+  public mode:String = 'home';
 
+  changeMode(event:String){
+    this.mode = event;
+  }
 }

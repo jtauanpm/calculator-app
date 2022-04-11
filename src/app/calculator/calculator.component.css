@@ -61,19 +61,18 @@ h1{
 
 #historic{
     margin-top: 1%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 40px;
     height: 80%;
     width: 15%;
     position: fixed;
     right: 10%;
     padding-top: 0%;
-}
-
-#historic-list{
+    box-shadow: 3px 4px 14px 0px rgba(0, 0, 0, 0.39);
     font-size: 1.5em;
     font-style: italic;
 }
+
 
 #clear-btn{
     margin-top: 2.5%;
