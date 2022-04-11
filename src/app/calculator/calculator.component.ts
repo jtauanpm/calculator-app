@@ -9,6 +9,7 @@ import { CalcRecord } from 'src/models/calc-record.model';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
+  public historic:boolean = false;
   public field:string = '';
   public null:string = 'empty';
   public historicList:CalcRecord[] = [];
@@ -49,9 +50,11 @@ export class CalculatorComponent implements OnInit {
   }
 
   cleanHistory(){
-    this.clearConfirm = confirm("Deseja limpar o histórico ?");
+    this.clearConfirm = confirm("Do you want to clear the history ?");
     if(this.clearConfirm == true){
       this.historicList = [];
+      this.save();
+      this.historic = false;
     }
   }
 
@@ -67,6 +70,11 @@ export class CalculatorComponent implements OnInit {
       this.historicList = JSON.parse(dataHistoric);
     }
   }
+
+  showHistory(){
+    this.historic = !this.historic;
+  }
+
 
   ngOnInit(): void {
   }
